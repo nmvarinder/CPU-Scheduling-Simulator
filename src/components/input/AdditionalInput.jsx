@@ -3,7 +3,7 @@ import React from "react";
 
 const AdditionalInputs = ({ setAdditionalInput, algorithm }) => {
   return (
-    <div>
+    <div className="additional-inputs">
       {algorithm === "RR" && (
         <>
           <label>Time Quantum</label>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import InputContainer from "./components/input/InputContainer";
 import OutputContainer from "./components/output/OutputContainer";
 import { calculateFCFS } from "./algorithms/fcfs";
@@ -7,6 +8,7 @@ import { calculateSTRF } from "./algorithms/strf";
 import { calculateRR } from "./algorithms/rr";
 import { calculateNPP } from "./algorithms/npp";
 import { calculatePP } from "./algorithms/pp";
+import Button from "./components/Button";
 
 const App = () => {
   const [algorithm, setAlgorithm] = useState("FCFS");
@@ -50,17 +52,28 @@ const App = () => {
   };
 
   return (
-    <div>
-      <InputContainer
-        setAlgorithm={setAlgorithm}
-        setArrivalTimes={setArrivalTimes}
-        setBurstTimes={setBurstTimes}
-        setAdditionalInput={setAdditionalInput}
-        algorithm={algorithm}
-      />
-      <button onClick={handleSolve}>Solve</button>
-      <OutputContainer ganttChart={output.ganttChart} table={output.table} />
-    </div>
+    <>
+      <div className="app-name">
+        <p className="title">cpu scheduling simulator</p>
+        <p className="description">
+          This is a visualizer for scheduling algorithms.
+        </p>
+      </div>
+
+      <div className="input-box">
+        <InputContainer
+          setAlgorithm={setAlgorithm}
+          setArrivalTimes={setArrivalTimes}
+          setBurstTimes={setBurstTimes}
+          setAdditionalInput={setAdditionalInput}
+          algorithm={algorithm}
+        />
+        <button className="btn" onClick={handleSolve}>
+          Solve
+        </button>
+        <OutputContainer ganttChart={output.ganttChart} table={output.table} />
+      </div>
+    </>
   );
 };
 

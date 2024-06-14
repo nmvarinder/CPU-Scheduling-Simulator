@@ -3,6 +3,7 @@ import AlgorithmSelector from "./AlgorithmSelector";
 import ArrivalTimeInput from "./ArrivalTimeInput";
 import BurstTimeInput from "./BurstTimeInput";
 import AdditionalInput from "./AdditionalInput";
+import Button from "../Button";
 
 const InputContainer = ({
   setAlgorithm,
@@ -16,7 +17,7 @@ const InputContainer = ({
   }, [algorithm, setAdditionalInput]);
 
   return (
-    <div>
+    <div className="input-container">
       <AlgorithmSelector setAlgorithm={setAlgorithm} />
       <ArrivalTimeInput setArrivalTimes={setArrivalTimes} />
       <BurstTimeInput setBurstTimes={setBurstTimes} />

@@ -3,7 +3,7 @@ import React from "react";
 
 const AlgorithmSelector = ({ setAlgorithm }) => {
   return (
-    <div>
+    <div className="algorithm-selector">
       <label>Algorithm</label>
       <select onChange={(e) => setAlgorithm(e.target.value)}>
         <option value="FCFS">First Come First Serve, FCFS</option>

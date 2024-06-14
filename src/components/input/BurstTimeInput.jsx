@@ -3,7 +3,7 @@ import React from "react";
 
 const BurstTimeInput = ({ setBurstTimes }) => {
   return (
-    <div>
+    <div className="burst-time-input">
       <label>Burst Times</label>
       <input
         type="text"

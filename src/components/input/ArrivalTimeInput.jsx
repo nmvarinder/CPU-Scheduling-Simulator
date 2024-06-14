@@ -3,7 +3,7 @@ import React from "react";
 
 const ArrivalTimeInput = ({ setArrivalTimes }) => {
   return (
-    <div>
+    <div className="arrival-time-input">
       <label>Arrival Times</label>
       <input
         type="text"
