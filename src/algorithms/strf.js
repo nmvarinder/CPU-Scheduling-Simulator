@@ -1,4 +1,4 @@
-export const calculatePP = (arrivalTimes, burstTimes, priorities) => {
+export const calculateSTRF = (arrivalTimes, burstTimes) => {
   let ganttChart = [];
   let table = [];
   let currentTime = 0;
@@ -6,10 +6,9 @@ export const calculatePP = (arrivalTimes, burstTimes, priorities) => {
     arrivalTime: time,
     burstTime: burstTimes[index],
     remainingTime: burstTimes[index],
-    priority: priorities[index],
     job: `Job ${index + 1}`,
   }));
-  let lastJob = null;
+  let completedJobs = [];
 
   while (jobs.length > 0) {
     let availableJobs = jobs.filter((job) => job.arrivalTime <= currentTime);
@@ -19,20 +18,8 @@ export const calculatePP = (arrivalTimes, burstTimes, priorities) => {
     }
 
     let nextJob = availableJobs.reduce((prev, curr) =>
-      prev.priority < curr.priority ? prev : curr
+      prev.remainingTime < curr.remainingTime ? prev : curr
     );
-
-    if (lastJob && lastJob.job !== nextJob.job) {
-      ganttChart.push({
-        job: lastJob.job,
-        start: lastJob.start,
-        end: currentTime,
-      });
-      nextJob.start = currentTime;
-    } else if (!nextJob.start) {
-      nextJob.start = currentTime;
-    }
-
     nextJob.remainingTime--;
     currentTime++;
 
@@ -50,16 +37,14 @@ export const calculatePP = (arrivalTimes, burstTimes, priorities) => {
         waitingTime: waitingTime,
       });
 
-      ganttChart.push({
-        job: nextJob.job,
-        start: nextJob.start,
-        end: currentTime,
-      });
       jobs = jobs.filter((job) => job !== nextJob);
-      lastJob = null;
-    } else {
-      lastJob = nextJob;
     }
+
+    ganttChart.push({
+      job: nextJob.job,
+      start: currentTime - 1,
+      end: currentTime,
+    });
   }
 
   return { ganttChart, table };
