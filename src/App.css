@@ -119,3 +119,85 @@ select, input{
 }
 
 
+/* output styling */
+.resultblock{
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+
+.output-box-container{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  box-shadow: 1px 2px 20px rgba(0,0,0,0.1);
+  background-color: #fff;
+  color: #333;
+}
+
+.gantt-chart-container{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  box-shadow: 1px 2px 20px rgba(0,0,0,0.1);
+}
+
+.gjobName{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: rgb(121, 3, 157);
+  padding: 10px;
+}
+
+.gjobTime{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+  background-color: rgb(217, 155, 236);
+}
+
+
+.output-table-container{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  box-shadow: 1px 2px 20px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ececec;
+  box-shadow: 1px 2px 20px rgba(0,0,0,0.1);
+}
+
+th, tr, td{
+  padding: 10px;
+  text-align: left;
+}
+
+
+

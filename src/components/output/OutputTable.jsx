@@ -5,7 +5,7 @@ const OutputTable = ({ data }) => {
     return null;
   }
   return (
-    <div>
+    <div className="output-table-container">
       <h3>Output Table</h3>
       <table border="1">
         <thead>

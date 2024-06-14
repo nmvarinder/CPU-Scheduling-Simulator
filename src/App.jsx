@@ -71,6 +71,11 @@ const App = () => {
         <button className="btn" onClick={handleSolve}>
           Solve
         </button>
+
+        {output.ganttChart.length !== 0 && output.table.length && (
+          <p className="resultblock">result</p>
+        )}
+
         <OutputContainer ganttChart={output.ganttChart} table={output.table} />
       </div>
     </>
