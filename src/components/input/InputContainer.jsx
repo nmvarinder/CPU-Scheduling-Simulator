@@ -3,7 +3,6 @@ import AlgorithmSelector from "./AlgorithmSelector";
 import ArrivalTimeInput from "./ArrivalTimeInput";
 import BurstTimeInput from "./BurstTimeInput";
 import AdditionalInput from "./AdditionalInput";
-import Button from "../Button";
 
 const InputContainer = ({
   setAlgorithm,
